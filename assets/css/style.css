@@ -54,6 +54,7 @@ ul {
 
 /* Main Windows Section */
 .main-windows {
+    z-index: 9;
     min-height: 430px;
     min-width: 800px;
     max-height: 1000px;
@@ -65,6 +66,8 @@ ul {
     position: absolute;
     /*resize: both; !*enable this to css resize*! */
     overflow: hidden;
+    /* transform: scale(0.2); */
+    /* display: none; */
 }
 .main-windows .resizer-right {
     width: 3px;
@@ -452,6 +455,15 @@ ul {
     line-height: 24px;
     text-align: center;
     margin-right: 2px;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-sidebar-menu:hover li .windows-sidebar-menu-icon {
+    opacity: 1;
 }
 .windows-sidebar-menu li a {
     text-decoration: none;
@@ -568,6 +580,174 @@ ul {
 
 
 
+
+
+/* Windows10 Desktop */
+.windows10-desktop-area {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: url('../images/wallpaper.jpg');
+    background-size: cover;
+}
+
+
+
+/* Windows10 Taskbar */
+.windows10-taskbar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(0 0 0 / 50%);
+    backdrop-filter: blur(10px);
+}
+.windows10-taskbar .taskbar-icon img {
+    width: 22px;
+}
+.windows10-taskbar .windows10-taskbar-apps {
+    height: 100%;
+}
+.windows10-taskbar .taskbar-window-icon {
+    color: #ffffff;
+    font-size: 18px;
+    height: 100%;
+    width: 48px;
+    text-align: center;
+    line-height: 44px;
+}
+.windows10-taskbar-apps .taskbar-icon-task-view:hover img.normal-icon,
+.windows10-taskbar-apps .taskbar-icon-task-view img.hover-icon,
+.windows10-taskbar .taskbar-window-icon:hover img.normal-img,
+.windows10-taskbar .taskbar-window-icon img.hover-img {
+    display: none
+}
+.windows10-taskbar-apps .taskbar-icon-task-view:hover img.hover-icon,
+.windows10-taskbar .taskbar-window-icon:hover img.hover-img {
+    display: inline-block;
+}
+.windows10-taskbar .taskbar-window-icon:hover {
+    background: rgba(0,0,0,0.2);
+}
+.windows10-taskbar-search-app {
+    position: relative;
+    height: 100%;
+    width: 340px;
+}
+.windows10-taskbar-search-app i {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+.windows10-taskbar-search-app input {
+    height: 100%;
+    width: 100%;
+    background: #f2f2f2;
+    border: 1px solid #c2c2c2;
+    color: #2b2b2b;
+    padding: 0 20px 0 36px;
+}
+.windows10-taskbar-search-app input::-moz-placeholder,
+.windows10-taskbar-search-app input::-webkit-input-placeholder,
+.windows10-taskbar-search-app input::placeholder {
+    color: #2b2b2b;
+}
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.windows10-taskbar-apps .taskbar-icon {
+    width: 48px;
+    text-align: center;
+    height: 100%;
+    line-height: 50px;
+    margin-right: 2px;
+    position: relative;
+}
+.windows10-taskbar-right .taskbar-datetime:hover,
+.windows10-taskbar-right .taskbar-notification:hover,
+.windows10-taskbar-right .taskbar-speaker:hover,
+.windows10-taskbar-right .taskbar-wifi-icon:hover,
+.windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.windows10-taskbar-apps .taskbar-icon:hover {
+    background: rgb(255 255 255 / 10%);
+}
+.windows10-taskbar-apps .taskbar-icon-task-view {
+    line-height: 46px;
+}
+.windows10-taskbar-apps .taskbar-icon-task-view img {
+    width: auto;
+}
+.windows10-taskbar-apps .taskbar-icon-cortana:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 2px #898685;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+}
+.windows10-taskbar-right .taskbar-datetime,
+.windows10-taskbar-right .taskbar-notification,
+.windows10-taskbar-right .taskbar-wifi-icon,
+.windows10-taskbar-right {
+    height: 100%;
+}
+.windows10-taskbar-right .taskbar-show-hidden-icon {
+    width: 26px;
+    text-align: center;
+    color: #ffffff;
+    height: 100%;
+    line-height: 42px;
+    margin-right: 2px;
+}
+.windows10-taskbar-right .taskbar-speaker,
+.windows10-taskbar-right .taskbar-wifi-icon {
+    line-height: 42px;
+    color: #ffffff;
+    font-size: 22px;
+    margin-right: 2px;
+    padding: 0 2px 0 0;
+    margin-right: 2px;
+}
+.windows10-taskbar-right .taskbar-wifi-icon i {
+    transform: rotate(45deg);
+}
+.windows10-taskbar-right .taskbar-speaker {
+    padding-right: 1px;
+    padding-left: 1px;
+}
+.windows10-taskbar-right .taskbar-notification {
+    width: 42px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 42px;
+}
+.windows10-taskbar-right .taskbar-datetime {
+    vertical-align: middle;
+    width: 76px;
+    text-align: center;
+    cursor: context-menu;
+}
+.windows10-taskbar-right .taskbar-datetime span {
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.3px;
+}
+.windows10-taskbar-right .taskbar-datetime span:first-child {
+    margin-top: 2px;
+}
 
 
 
