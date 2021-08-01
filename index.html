@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows Explroe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <section class="main-windows">
         <header class="windows-header">
-            <div class="windows-header-bar">
-                <div class="left">
-                    <div class="windows-header-bar-folders">
+            <div class="windows-header-bar d-flex items-start justify-between">
+                <div class="left d-flex items-start">
+                    <div class="windows-header-bar-folders d-flex items-center">
                         <div class="windows-header-bar-folder-1">
-                            <img src="./assets/images/empty-small-folder.png" alt="Empty Folder">
+                            <img src="./assets/images/disk.png" alt="Disk">
                         </div>
                         <div class="windows-header-bar-folder-2">
                             <img src="./assets/images/check-text-file.png" alt="Property File">
@@ -24,15 +27,15 @@
                             <img src="./assets/images/empty-small-folder.png" alt="Empty Folder">
                         </div>
                     </div>
-                    <div class="windows-header-foder-name">
+                    <div class="windows-header-foder-name d-flex items-center">
                         <h3 class="windows-header-folder-manage-text">
                             Manage
                         </h3>
-                        <span class="windows-header-folder-name-text">tanbirs-files</span>
+                        <span class="windows-header-folder-name-text">Local Disk (C:)</span>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="windows-close-buttons">
+                    <div class="windows-close-buttons d-flex items-center">
                         <span class="windows-minimize-btn">
                             <i class="la la-minus"></i>
                         </span>
@@ -44,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="windows-header-menu-bar">
+            <div class="windows-header-menu-bar d-flex items-center justify-between">
                 <ul class="windows-header-nav-menu">
                     <li class="menu-file active">
                         <a href="#">File</a>
@@ -58,8 +61,8 @@
                     <li class="menu-view">
                         <a href="#">View</a>
                     </li>
-                    <li class="menu-picture-tools">
-                        <a href="#">Picture Tools</a>
+                    <li class="menu-drive-tools">
+                        <a href="#">Drive Tools</a>
                     </li>
                 </ul>
                 <div class="windows-header-menu-bar-right">
