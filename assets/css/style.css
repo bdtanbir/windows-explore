@@ -34,6 +34,12 @@ ul {
 .justify-start {
     justify-content: flex-start;
 }
+.flex-none {
+    flex: none;
+}
+.flex-1 {
+    flex: 1;
+}
 
 
 
@@ -50,7 +56,7 @@ ul {
 
 /* Windows Header Bar */
 .windows-header-bar .windows-header-bar-folders {
-    width: 200px;
+    width: 234px;
 }
 .windows-header-bar .windows-header-bar-folders > * {
     position: relative;
@@ -87,7 +93,7 @@ ul {
 }
 .windows-header-bar .windows-header-foder-name .windows-header-folder-name-text {
     color: #aaaaaa;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* Windows Close Buttons */
@@ -125,8 +131,252 @@ ul {
 }
 
 /* Windows Menu Bar */
-.windows-header-menu-bar {}
+.windows-header-nav-menu  li {
+    margin-right: 2px;
+}
+.windows-header-nav-menu  li a {
+    display: inline-block;
+    text-decoration: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    color: #313131;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 14px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    position: relative;
+    cursor: context-menu;
+}
+.windows-header-nav-menu  li.active a {
+    background: #0066b4;
+    color: #ffffff;
+    padding: 4px 17px;
+}
+.windows-header-nav-menu  li.active a:hover {
+    background: #007ddd;
+}
+.windows-header-nav-menu  li a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #ebecec;
+    border-right: 1px solid #ebecec;
+    border-top: 1px solid #ebecec;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-header-nav-menu  li.active a:before {
+    display: none;
+}
+.windows-header-nav-menu  li a:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
+.windows-header-nav-menu  li.menu-drive-tools a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      #c1c1c1, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-header-nav-menu li.menu-drive-tools a {
+    padding: 4px 13px;
+}
+.windows-header-nav-menu li.menu-drive-tools a:before {
+    border-left: 1px solid #c1f09d;
+    border-right: 1px solid #c1f09d;
+    border-top: 1px solid #c1f09d;
+}
+.windows-header-nav-menu li.menu-drive-tools a:hover:after {
+    opacity: 0;
+}
+.windows-header-menu-bar {
+    border-bottom: 1px solid #dadbdc;
+}
 
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help,
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-ribbon-toggle {
+    font-size: 12px;
+    color: #a6a6a6;
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    cursor: context-menu;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help:hover,
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-ribbon-toggle:hover {
+    border: 1px solid #abd4fe;
+    background: #f1f7fe;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help {
+    color: #ffffff;
+    z-index: 1;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -7px;
+    margin-top: -7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0078d7;
+    z-index: -1;
+}
+
+
+
+/* Windows Header Breadcrumb Control Panel */
+.windows-header-controls-panel {
+    margin-top: 5px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls {
+    padding-left: 4px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-next,
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-preview {
+    color: #808080;
+    font-size: 17px;
+    padding: 4px 7px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-down:hover,
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-preview:hover {
+    color: #3298fe;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-next {
+    color: #dfdfdf;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-down {
+    font-size: 9px;
+    color: #808080;
+    margin-left: 4px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-up {
+    color: #808080;
+    font-size: 17px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    border: 1px solid transparent;
+    width: 22px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    margin: 0 1px 0 5px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-up:hover {
+    background: #e5f3ff;
+    border-color: #cce8ff;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel {
+    border: 1px solid #d9d9d9;
+    padding-left: 2px;
+    margin-right: 12px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .left-panel i {
+    font-size: 10px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .left-panel .folder-name {
+    display: inline-block;
+    font-size: 12px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    display: inline-block;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i:hover {
+    color: #3298fe;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-preview-location {
+    border-left: 1px solid transparent;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-preview-location:hover,
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-refresh {
+    border-left: 1px solid #d9d9d9;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i:hover {
+    background: #e5f3fb;
+    -webkit-box-shadow: 0 0 0px 1px #70c0e7 inset;
+    -moz-box-shadow: 0 0 0px 1px #70c0e7 inset;
+    box-shadow: 0 0 0px 1px #70c0e7 inset;
+}
+.windows-header-search-form {
+    position: relative;
+}
+.windows-header-search-form .windows-header-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: #969696;
+}
+.windows-header-search-form input {
+    width: 202px;
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    padding-left: 40px;
+    font-size: 11px;
+}
+.windows-header-search-form input::placeholder,
+.windows-header-search-form input::-webkit-input-placeholder,
+.windows-header-search-form input::-moz-placeholder {
+    color: #6d6d6d;
+}
+.windows-header-search-form input:focus {
+    outline: none;
+    box-shadow: none;
+}
 
 
 

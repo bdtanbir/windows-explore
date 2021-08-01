@@ -48,7 +48,7 @@
             </div>
 
             <div class="windows-header-menu-bar d-flex items-center justify-between">
-                <ul class="windows-header-nav-menu">
+                <ul class="windows-header-nav-menu d-flex items-center">
                     <li class="menu-file active">
                         <a href="#">File</a>
                     </li>
@@ -65,9 +65,36 @@
                         <a href="#">Drive Tools</a>
                     </li>
                 </ul>
-                <div class="windows-header-menu-bar-right">
+                <div class="windows-header-menu-bar-right d-flex items-center">
                     <i class="windows-header-menu-ribbon-toggle la la-angle-down"></i>
                     <span class="windows-header-menu-help">?</span>
+                </div>
+            </div>
+
+            <div class="windows-header-controls-panel d-flex items-center justify-between">
+                <div class="windows-header-arrows-controls d-flex items-center flex-none">
+                    <i class="windows-header-arrow-preview la la-arrow-left"></i>
+                    <i class="windows-header-arrow-next la la-arrow-right"></i>
+                    <i class="windows-header-arrow-down la la-angle-down"></i>
+                    <i class="windows-header-arrow-up la la-arrow-up"></i>
+                </div>
+                <div class="windows-header-folder-breadcrumb-panel d-flex justify-between items-center flex-1">
+                    <div class="left-panel d-flex items-center">
+                        <img src="./assets/images/disk.png" alt="Disk">
+                        <i class="la la-angle-right"></i>
+                        <span class="folder-name">This PC</span>
+                        <i class="la la-angle-right"></i>
+                        <span class="folder-name">Local Disk (C:)</span>
+                    </div>
+
+                    <div class="right-panel d-flex items-center">
+                        <i class="windows-header-folder-breadcrumb-preview-location la la-angle-down"></i>
+                        <i class="windows-header-folder-breadcrumb-refresh las la-redo-alt"></i>
+                    </div>
+                </div>
+                <div class="windows-header-search-form">
+                    <i class="windows-header-search-icon las la-search"></i>
+                    <input type="search" name="s" placeholder="Search Local Disk (C:)">
                 </div>
             </div>
         </header>
