@@ -15,7 +15,7 @@
     <section class="main-windows">
         <header class="windows-header">
             <div class="windows-header-bar d-flex items-start justify-between">
-                <div class="left d-flex items-start">
+                <div class="left drag-window d-flex items-start flex-1">
                     <div class="windows-header-bar-folders d-flex items-center">
                         <div class="windows-header-bar-folder-1">
                             <img src="./assets/images/disk.png" alt="Disk">
@@ -98,8 +98,104 @@
                 </div>
             </div>
         </header>
+
+        <div class="windows-body d-flex">
+            <div class="windows-sidebar flex-none">
+                <ul class="windows-sidebar-menu">
+                    <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="./assets/images/quick-access-icon.png" alt=""> Quick access</a>
+                    </li>
+                    <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="./assets/images/one-drive-icon.png" alt=""> OneDrive</a>
+                    </li>
+                    <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-down"></i>
+                        <a href="#"><img src="./assets/images/pc-icon.png" alt=""> This PC</a>
+                        <ul>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/3d-object-icon.png" alt=""> 3D Objects</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/desktop-icon.png" alt=""> Desktop</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/documents-icon.png" alt=""> Documents</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/downloads-icon.png" alt=""> Downloads</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/music-icon.png" alt=""> Music</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/pictures-icon.png" alt=""> Pictures</a>
+                            </li>
+                            <li>
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/videos-icon.png" alt=""> Videos</a>
+                            </li>
+                            <li class="active">
+                                <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                                <a href="#"><img src="./assets/images/disk.png" alt=""> Local Disk (C:)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="./assets/images/network-icon.png" alt=""> Network</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="windows-content-area flex-1">
+                <div class="windows-content-sort-filter d-flex items-center justify-between">
+                    <span class="sort-name">Name</span>
+                    <span class="sort-date-modified flex-auto">Date modified</span>
+                    <span class="sort-type">Type</span>
+                    <span class="sort-size">Size</span>
+                </div>
+                <div class="windows-folder-lists">
+                    <div class="windows-folder-list d-flex items-center justify-between hidden-folder">
+                        <div class="folder-name d-flex items-center"><img src="./assets/images/empty-small-folder.png" alt=""> $WINDOWS.~BT</div>
+                        <div class="folder-date flex-auto">7/15/2021 9:26 AM</div>
+                        <div class="folder-type">File Folder</div>
+                        <div class="folder-size"></div>
+                    </div>
+                    <div class="windows-folder-list d-flex items-center justify-between hidden-folder">
+                        <div class="folder-name d-flex items-center"><img src="./assets/images/empty-small-folder.png" alt=""> $WinREAgent</div>
+                        <div class="folder-date flex-auto">4/22/2021 11:22 AM</div>
+                        <div class="folder-type">File Folder</div>
+                        <div class="folder-size"></div>
+                    </div>
+                    <div class="windows-folder-list d-flex items-center justify-between">
+                        <div class="folder-name d-flex items-center"><img src="./assets/images/empty-small-folder.png" alt=""> cmder</div>
+                        <div class="folder-date flex-auto">7/6/2021 2:37 AM</div>
+                        <div class="folder-type">File Folder</div>
+                        <div class="folder-size"></div>
+                    </div>
+                    <div class="windows-folder-list d-flex items-center justify-between">
+                        <div class="folder-name d-flex items-center"><img src="./assets/images/text-file-icon.png" alt=""> cbs.log</div>
+                        <div class="folder-date flex-auto">1/9/2020 7:20 PM</div>
+                        <div class="folder-type">Text Document</div>
+                        <div class="folder-size">1 KB</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="folder-number-and-view-list-icon">
+            <span class="folder-number-count">0 items</span>
+        </div>
     </section>
-    <h1 class="update-num">0</h1>
+    <section class="windows10-desktop-area">
+        <div class="windows10-taskbar"></div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="./assets/js/main.js"></script>

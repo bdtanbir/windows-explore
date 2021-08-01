@@ -9,6 +9,9 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 ul {
     list-style: none;
@@ -40,16 +43,66 @@ ul {
 .flex-1 {
     flex: 1;
 }
+.flex-auto {
+    flex: auto;
+}
+.hidden-folder img {
+    opacity: 0.6;
+}
 
 
 
 /* Main Windows Section */
 .main-windows {
-    width: 865px;
+    min-height: 430px;
+    min-width: 800px;
+    max-height: 1000px;
+    max-width: 1000px;
     background: #fff;
-    margin: 30px auto 0 auto;
-    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    /* margin: 30px auto 0 auto; */
+    box-shadow: 0 0 15px rgb(0 0 0 / 32%);
     border: 1px solid #fff;
+    position: absolute;
+    /*resize: both; !*enable this to css resize*! */
+    overflow: hidden;
+}
+.main-windows .resizer-right {
+    width: 3px;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: e-resize;
+    z-index: 999999999999;
+}
+.main-windows .resizer-bottom {
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: n-resize;
+    z-index: 999999999999;
+}
+.main-windows .resizer-both {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: nw-resize;
+}
+.main-windows * {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 
@@ -66,7 +119,7 @@ ul {
 .windows-header-bar .windows-header-bar-folders > *:before {
     content: '';
     width: 1px;
-    height: 14px;
+    height: 12px;
     position: absolute;
     right: 0;
     top: 0;
@@ -335,9 +388,8 @@ ul {
     -ms-transition: .3s;
     -o-transition: .3s;
     display: inline-block;
-}
-.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i:hover {
-    color: #3298fe;
+    color: #808080;
+    font-size: 12px;
 }
 .windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-preview-location {
     border-left: 1px solid transparent;
@@ -354,6 +406,7 @@ ul {
 }
 .windows-header-search-form {
     position: relative;
+    margin-right: 12px;
 }
 .windows-header-search-form .windows-header-search-icon {
     position: absolute;
@@ -377,6 +430,143 @@ ul {
     outline: none;
     box-shadow: none;
 }
+
+/* Windows Sidebar */
+.windows-sidebar {
+    padding-top: 7px;
+    position: relative;
+    width: 178px;
+}
+.windows-content-area .windows-folder-lists {
+    padding-left: 15px;
+}
+.windows-sidebar-menu {
+    border-right: 1px solid #f7f7f7;
+    height: 100%;
+}
+.windows-sidebar-menu li .windows-sidebar-menu-icon {
+    color: #a6a6a6;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin-right: 2px;
+}
+.windows-sidebar-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    display: inline-flex;
+    align-items: center;
+}
+.windows-sidebar-menu li a img {
+    margin-right: 5px;
+}
+.windows-sidebar-menu li {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    z-index: 1;
+}
+.windows-sidebar-menu li:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: #e5f3ff;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-sidebar-menu li:hover:before {
+    opacity: 1;
+}
+.windows-sidebar-menu li ul {
+    width: 100%;
+}
+.windows-sidebar-menu li ul li {
+    padding-left: 8px;
+}
+.folder-number-and-view-list-icon {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #ffffff;
+    font-size: 13px;
+    padding: 8px 14px;
+}
+/* Content */
+.windows-content-area {
+    padding-top: 8px;
+}
+.windows-content-sort-filter {
+    margin-bottom: 5px;
+}
+.windows-content-sort-filter > span {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-left: 1px solid #e5e5e5;
+    cursor: context-menu;
+}
+.windows-folder-list:hover,
+.windows-content-sort-filter > span:hover {
+    background: #e5f3ff;
+}
+.windows-content-sort-filter .sort-name {
+    border: none;
+    padding: 5px 16px;
+    min-width: 260px;
+}
+.windows-content-sort-filter .sort-type {
+    min-width: 125px;
+}
+.windows-content-sort-filter .sort-size {
+    min-width: 112px;
+}
+.windows-folder-list {
+    font-size: 12px;
+    padding: 3px 6px;
+    cursor: context-menu;
+}
+.windows-folder-list .folder-name {
+    min-width: 250px;
+    letter-spacing: 0.2px;
+}
+.windows-folder-list .folder-name img {
+    margin-right: 6px;
+}
+.windows-folder-list .folder-type,
+.windows-folder-list .folder-size,
+.windows-folder-list .folder-date {
+    color: #6d6d6d;
+}
+.windows-folder-list .folder-type {
+    min-width: 120px;
+}
+.windows-folder-list .folder-size {
+    min-width: 100px;
+}
+
+
+
 
 
 
