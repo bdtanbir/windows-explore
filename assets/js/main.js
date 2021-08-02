@@ -16,6 +16,13 @@ var winbody = document.querySelector('.windows-body');
 var winheight_and_mainwin = mainwindows.offsetHeight - winheight.offsetHeight;
 winbody.style.height = winheight_and_mainwin+'px';
 
+var windowsdesktop = document.querySelector('.windows10-desktop-area').offsetHeight
+var taskbar = document.querySelector('.windows10-taskbar').offsetHeight
+var notificationbar = document.querySelector('.windows10-notification-panel')
+var notification_height = windowsdesktop - taskbar;
+notificationbar.style.height = notification_height+'px';
+console.log(taskbar);
+
 
 
 // Taskbar App
@@ -33,6 +40,16 @@ $(document).on('click', '.windows-close-btn', function() {
 	$(".main-windows").removeClass('active');
 	$(".taskbar-icon-folder-explore").removeClass('active')
 });
+
+
+// Notification Panel
+$('body, html').on('click', function() {
+	$('.windows10-notification-panel').removeClass('active');
+})
+$('.taskbar-notification').on('click', function() {
+	$('.windows10-notification-panel').toggleClass('active');
+	$(this).toggleClass('active');
+})
 
 
 
@@ -193,6 +210,8 @@ function getDateTime() {
 	var hour    = now.getHours();
 	var minute  = now.getMinutes();
 	var ampm = hour >= 12 ? 'pm' : 'am';
+	hour = hour % 12;
+	hour = hour ? hour : 12; // the hour '0' should be '12'
 	if(day.toString().length == 1) {
 		 day = '0'+day;
 	}   
