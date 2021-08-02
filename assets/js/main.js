@@ -384,3 +384,105 @@ window.addEventListener("load", function(){
 	});
 });
 
+
+
+
+
+// Taskbar Right-click menu
+var taskbarRMenu;
+
+var taskbar_cmen = [
+	{
+		"text": "Toolbars",
+		"sub": [
+			{
+				"text": "Address"
+			},
+			{
+				"text": "Links"
+			},
+			{
+				"text": "Desktop"
+			},
+			{
+				"type": ContextMenu.DIVIDER
+			},
+			{
+				"text": "New toolbar..."
+			},
+		]
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Search",
+		"sub": [
+			{
+				"text": "Hidden"
+			},
+			{
+				"text": "Show search icon",
+			},
+			{
+				"text": "Show search box",
+				"icon": "<i class='la la-check'></i>"
+			},
+		]
+	},
+	{
+		"text": "Show Cartana button",
+		"icon": "<i class='la la-check'></i>"
+	},
+	{
+		"text": "Show Task View button",
+		"icon": "<i class='la la-check'></i>"
+	},
+	{
+		"text": "Show People on the taskbar",
+	},
+	{
+		"text": "Show Windows lnk Workspace button",
+	},
+	{
+		"text": "Show touch keyboard button",
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Cascade windows",
+	},
+	{
+		"text": "Show windows side by side",
+	},
+	{
+		"text": "Show the desktop",
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Task Manager",
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Lock the taskbar",
+		"icon": "<i class='la la-check'></i>"
+	},
+	{
+		"text": "Taskbar settings",
+		"icon": "<i class='la la-cog'></i>"
+	},
+];
+
+window.addEventListener("load", function(){
+	taskbarRMenu = new ContextMenu(taskbar_cmen);
+
+	document.getElementById('windows10-taskbar').addEventListener("contextmenu", function(e){
+		taskbarRMenu.display(e);
+	});
+});
+

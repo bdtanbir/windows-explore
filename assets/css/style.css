@@ -861,16 +861,6 @@ input:focus {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* RIGHT CLICK MENU */
 #cmenu {
     position: fixed;
@@ -882,14 +872,13 @@ input:focus {
 .cm_container{
     position: fixed;
     opacity: 0;
-    transform: scale(0);
     transition: transform 0.1s;
     transform-origin: top left;
     padding: 0;
+    z-index: 999999999999;
 }
 .cm_container.display{
     opacity: 1;
-    transform: scale(1);
 }
 .cm_container, .cm_container *{
     box-sizing: border-box;
@@ -961,8 +950,7 @@ input:focus {
     right: 100%;
 }
 .cm_container.cm_border_bottom > ul ul{
-    top: unset;
-    bottom: 0;
+    top: 0;
 }
 .cm_container li[disabled=""]{
     color: #777;
@@ -973,7 +961,7 @@ input:focus {
 }
 
 
-.cm_container li:first-child ul li:nth-child(3) .cm_icon_span i {
+#cm_0 li:first-child ul li:nth-child(3) .cm_icon_span i {
     color: #000;
     background: #000;
     border-radius: 50%;
@@ -984,4 +972,23 @@ input:focus {
     font-size: 7px;
     display: inline-block;
     transform: translateY(-2px);
+}
+
+
+#cm_1 ul {
+    border: 1px solid #a0a0a0;
+    width: 312px;
+    background: #2b2b2b;
+}
+#cm_1 ul li:hover {
+    background: #414141;
+}
+#cm_1 ul li {
+    padding: 8px 10px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+#cm_1 ul .cm_divider {
+    padding: 0;
 }
