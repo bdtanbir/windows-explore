@@ -30,11 +30,11 @@ $(document).on('click', '.taskbar-icon-folder-explore', function() {
 	$(".main-windows").toggleClass('active');
 	$(this).toggleClass('active');
 });
-$(document).on('click', '.windows-minimize-btn', function() {
+$(document).on('click', '.main-windows .windows-minimize-btn', function() {
 	$(".main-windows").removeClass('active');
 	$(".taskbar-icon-folder-explore").removeClass('active')
 });
-$(document).on('click', '.windows-close-btn', function() {
+$(document).on('click', '.main-windows .windows-close-btn', function() {
 	$("body").removeClass('file-explore-active');
 	$(".main-windows").removeClass('active');
 	$(".taskbar-icon-folder-explore").removeClass('active')
@@ -84,10 +84,28 @@ $(document).on('click', '.collapse-notification-footer-toggle.uncollapsed', func
 
 // Chrome browser
 var url_input = $("#url_input");
-var url_output = $("#url_output");
 $(document).on('click', '.submit-browser-url', function() {
 	var input_submit_url = url_input.val();
 	document.getElementById('url_output').src = input_submit_url
+});
+$(document).on('click', '.go-to-home', function() {
+	url_input.val('https://')
+	document.getElementById('url_output').src = 'https://';
+});
+
+$(document).on('click', '.taskbar-icon-chrome', function() {
+	$("body").addClass('chrome-browser-active');
+	$(".chrome-browser-area").toggleClass('active');
+	$(this).toggleClass('active');
+});
+$(document).on('click', '.chrome-browser-area .windows-minimize-btn', function() {
+	$(".chrome-browser-area").removeClass('active');
+	$(".taskbar-icon-chrome").removeClass('active')
+});
+$(document).on('click', '.chrome-browser-area .windows-close-btn', function() {
+	$("body").removeClass('chrome-browser-active');
+	$(".chrome-browser-area").removeClass('active');
+	$(".taskbar-icon-chrome").removeClass('active')
 });
 
 

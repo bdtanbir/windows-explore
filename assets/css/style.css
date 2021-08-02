@@ -691,7 +691,7 @@ input:focus {
     position: relative;
 }
 .windows10-taskbar-right .taskbar-datetime:hover,
-.file-explore-active .windows10-taskbar-apps .taskbar-icon.active,
+.windows10-taskbar-apps .taskbar-icon.active,
 .windows10-taskbar-right .taskbar-datetime:hover,
 .windows10-taskbar-right .taskbar-notification:hover,
 .windows10-taskbar-right .taskbar-speaker:hover,
@@ -775,11 +775,7 @@ input:focus {
     margin-top: 2px;
     text-transform: uppercase;
 }
-.file-explore-active .windows10-taskbar-apps .taskbar-icon.active:before,
-.file-explore-active .windows10-taskbar-apps .taskbar-icon-folder-explore:hover:before {
-    width: 100%;
-    left: 0;
-}
+.chrome-browser-active .windows10-taskbar-apps .taskbar-icon-chrome:before,
 .file-explore-active .windows10-taskbar-apps .taskbar-icon-folder-explore:before {
     content: '';
     position: absolute;
@@ -789,6 +785,12 @@ input:focus {
     bottom: 0;
     left: 7%;
     transition: .2s;
+}
+.chrome-browser-active .windows10-taskbar-apps .taskbar-icon-chrome:hover:before,
+.windows10-taskbar-apps .taskbar-icon.active:before,
+.file-explore-active .windows10-taskbar-apps .taskbar-icon-folder-explore:hover:before {
+    width: 100%;
+    left: 0;
 }
 
 
@@ -890,8 +892,17 @@ input:focus {
     height: 500px;
     position: fixed;
     border: 2px solid #f1f1f1;
+    border-top-width: 1px;
     background: #fff;
     border-radius: 0 0 4px 4px;
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+}
+.chrome-browser-area.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
 }
 .chrome-browser-area .chrome-browser-header {
     background: #f1f1f1;
@@ -936,6 +947,23 @@ input:focus {
     width: 100%;
     background: #ffffff;
     padding: 4px;
+}
+.chrome-browser-area .go-to-home {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.chrome-browser-area .go-to-home:hover {
+    background: #d4d4d4;
 }
 
 
@@ -1044,7 +1072,12 @@ input:focus {
     background-color: inherit;
 }
 
-
+#cm_0 li:nth-child(7) .cm_text {
+    display: initial;
+}
+#cm_0 li:nth-child(7) .undo-copy {
+    float: right;
+}
 #cm_0 li:first-child ul li:nth-child(3) .cm_icon_span i {
     color: #000;
     background: #000;
