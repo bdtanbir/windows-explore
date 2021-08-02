@@ -43,9 +43,9 @@ $(document).on('click', '.windows-close-btn', function() {
 
 
 // Notification Panel
-$('body, html').on('click', function() {
-	$('.windows10-notification-panel').removeClass('active');
-})
+// $('body, html').on('click', function() {
+// 	$('.windows10-notification-panel').removeClass('active');
+// })
 $(document).on('click', '.taskbar-notification', function() {
 	$('.windows10-notification-panel').toggleClass('active');
 	$(this).toggleClass('active');
@@ -64,6 +64,21 @@ $(document).on('click', '.volume-full', function() {
 $(document).on('click', '.volume-slow', function() {
 	$(".taskbar-speaker.volume-slow").removeClass('volume-slow').addClass('volume-mute');
 	$(".taskbar-speaker i").removeClass('la-volume-down').addClass('la-volume-mute');
+});
+
+
+
+// Notification Panel Common Links Toggle
+var notification_claps = document.querySelector(".collapse-notification-footer-toggle")
+$(document).on('click', '.collapse-notification-footer-toggle', function() {
+	$(".windows10-notification-footer").toggleClass('active');
+	$(this).toggleClass('uncollapsed')
+	notification_claps.innerHTML = 'Collapse';
+});
+$(document).on('click', '.collapse-notification-footer-toggle.uncollapsed', function() {
+	$(".windows10-notification-footer").removeClass('active');
+	$(this).removeClass('uncollapsed')
+	notification_claps.innerHTML = 'Expand';
 });
 
 
