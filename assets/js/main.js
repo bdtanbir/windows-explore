@@ -91,11 +91,83 @@ $(document).on('click', '.submit-browser-url', function() {
 });
 
 
-
 window.onload = function() {
     initDragElement();
     initResizeElement();
-  };
+	chromeinitDragElement();
+};
+
+function chromeinitDragElement() {
+	var pos1 = 0,
+		pos2 = 0,
+		pos3 = 0,
+		pos4 = 0;
+	var popups = document.getElementsByClassName("chrome-browser-area");
+	var elmnt = null;
+	var currentZIndex = 100; //TODO reset z index when a threshold is passed
+
+	for (var i = 0; i < popups.length; i++) {
+		var popup = popups[i];
+		var header = getHeader(popup);
+
+		popup.onmousedown = function() {
+		this.style.zIndex = "" + ++currentZIndex;
+		};
+
+		if (header) {
+		header.parentPopup = popup;
+		header.onmousedown = dragMouseDown;
+		}
+	}
+
+	function dragMouseDown(e) {
+		elmnt = this.parentPopup;
+		elmnt.style.zIndex = "" + ++currentZIndex;
+
+		e = e || window.event;
+		// get the mouse cursor position at startup:
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		document.onmouseup = closeDragElement;
+		// call a function whenever the cursor moves:
+		document.onmousemove = elementDrag;
+	}
+
+	function elementDrag(e) {
+		if (!elmnt) {
+		return;
+		}
+
+		e = e || window.event;
+		// calculate the new cursor position:
+		pos1 = pos3 - e.clientX;
+		pos2 = pos4 - e.clientY;
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		// set the element's new position:
+		elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+		elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+	}
+
+	function closeDragElement() {
+		/* stop moving when mouse button is released:*/
+		document.onmouseup = null;
+		document.onmousemove = null;
+	}
+
+	function getHeader(element) {
+		var headerItems = element.getElementsByClassName("chrome-browser-drag");
+
+		if (headerItems.length === 1) {
+		return headerItems[0];
+		}
+
+		return null;
+	}
+}
+
+
+
   
   function initDragElement() {
     var pos1 = 0,
@@ -173,12 +245,6 @@ window.onload = function() {
   
     for (var i = 0; i < popups.length; i++) {
       var p = popups[i];
-  
-      var left = document.createElement("div");
-      left.className = "resizer-left";
-      p.appendChild(left);
-      left.addEventListener("mousedown", initDrag, false);
-      left.parentPopup = p;
   
       var right = document.createElement("div");
       right.className = "resizer-right";

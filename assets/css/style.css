@@ -91,7 +91,7 @@ iframe {
     opacity: 1;
     visibility: visible;
 }
-.main-windows .resizer-right {
+.resizer-right {
     width: 3px;
     height: 100%;
     background: transparent;
@@ -101,7 +101,7 @@ iframe {
     cursor: e-resize;
     z-index: 999999999999;
 }
-.main-windows .resizer-bottom {
+.resizer-bottom {
     width: 100%;
     height: 3px;
     background: transparent;
@@ -111,7 +111,7 @@ iframe {
     cursor: n-resize;
     z-index: 999999999999;
 }
-.main-windows .resizer-both {
+.resizer-both {
     width: 5px;
     height: 5px;
     background: transparent;
@@ -886,7 +886,7 @@ input:focus {
 
 /* Chrome Browser */
 .chrome-browser-area {
-    width: 800px;
+    width: 850px;
     height: 500px;
     position: fixed;
     border: 2px solid #f1f1f1;
@@ -895,11 +895,26 @@ input:focus {
 }
 .chrome-browser-area .chrome-browser-header {
     background: #f1f1f1;
+    position: relative;
 }
-.chrome-browser-area .chrome-browser-header .chrome-browser-left {
-    padding-left: 10px;
+.chrome-browser-drag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: all-scroll;
 }
-.chrome-browser-area .chrome-browser-header .chrome-browser-left input {
+.chrome-browser-area .chrome-browser-header .chrome-browser-left img {
+    width: 18px;
+    margin-left: 5px;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle,
+.chrome-browser-area .chrome-browser-header .chrome-browser-right {
+    z-index: 5;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle input {
     border: none;
     background: #ffffff;
     width: 500px;
@@ -907,7 +922,7 @@ input:focus {
     border-radius: 3px;
     border: 1px solid #eeeeee;
 }
-.chrome-browser-area .chrome-browser-header .chrome-browser-left button {
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle button {
     border: none;
     background: #0798ec;
     color: #ffffff;
