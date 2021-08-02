@@ -964,6 +964,33 @@ input:focus {
 }
 .chrome-browser-area .go-to-home:hover {
     background: #d4d4d4;
+    z-index: 9999999;
+}
+
+
+
+/* Start Bar */
+.windows10-start-area {
+    width: 648px;
+    height: 641px;
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+    overflow: hidden;
+    background: rgb(34 34 34 / 84%);
+    backdrop-filter: blur(30px);
+    padding-left: 48px;
+}
+.windows10-start-area .windows10-start-content-left {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 99;
+    background: rgb(34 34 34 / 60%);
+    width: 48px;
+    backdrop-filter: blur(20px);
 }
 
 
