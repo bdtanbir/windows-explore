@@ -18,6 +18,22 @@ winbody.style.height = winheight_and_mainwin+'px';
 
 
 
+// Taskbar App
+$(document).on('click', '.taskbar-icon-folder-explore', function() {
+	$("body").addClass('file-explore-active');
+	$(".main-windows").toggleClass('active');
+	$(this).toggleClass('active');
+});
+$(document).on('click', '.windows-minimize-btn', function() {
+	$(".main-windows").removeClass('active');
+	$(".taskbar-icon-folder-explore").removeClass('active')
+});
+$(document).on('click', '.windows-close-btn', function() {
+	$("body").removeClass('file-explore-active');
+	$(".main-windows").removeClass('active');
+	$(".taskbar-icon-folder-explore").removeClass('active')
+});
+
 
 
 window.onload = function() {
@@ -169,14 +185,168 @@ var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 datefield.innerHTML = today;
-function formatAMPM(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return strTime;
+
+
+function getDateTime() {
+	var now     = new Date(); 
+	var day     = now.getDate();
+	var hour    = now.getHours();
+	var minute  = now.getMinutes();
+	var ampm = hour >= 12 ? 'pm' : 'am';
+	if(day.toString().length == 1) {
+		 day = '0'+day;
+	}   
+	if(hour.toString().length == 1) {
+		 hour = '0'+hour;
+	}
+	if(minute.toString().length == 1) {
+		 minute = '0'+minute;
+	} 
+	var dateTime = hour+':'+minute+' ' + ampm;   
+	 return dateTime;
 }
-timefield.innerHTML = formatAMPM(new Date);
+// example usage: realtime clock
+setInterval(function(){
+	currentTime = getDateTime();
+	timefield.innerHTML = currentTime;
+	// document.getElementById("digital-clock").innerHTML = currentTime;
+}, 1000);
+
+
+// Browser Right Click Menu
+var menu;
+
+var cmen = [
+	{
+		"text": "View",
+		"sub": [
+			{
+				"text": "Large icons"
+			},
+			{
+				"text": "Medium icons"
+			},
+			{
+				"text": "Small icons",
+				"icon": "<i class='las la-circle'></i>"
+			},
+			{
+				"type": ContextMenu.DIVIDER
+			},
+			{
+				"text": "Auto arrange icons",
+			},
+			{
+				"text": "Align icons to grid",
+			},
+			{
+				"type": ContextMenu.DIVIDER
+			},
+			{
+				"text": "Show desktop icons",
+				"icon": "<i class='la la-check'></i>"
+			},
+		]
+	},
+	{
+		"text": "Sort by",
+		"sub": [
+			{
+				"text": "Name"
+			},
+			{
+				"text": "Size"
+			},
+			{
+				"text": "Item type"
+			},
+			{
+				"text": "Date modified"
+			}
+		]
+	},
+	{
+		"text": "Refresh",
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Paste",
+		"enabled": false
+	},
+	{
+		"text": "Paste shortcut",
+		"enabled": false
+	},
+	{
+		"text": "Undo Copy <span class='undo-copy'>Ctrl+Z</span>",
+	},
+	{
+		"text": "Cmder Here",
+		"icon": "<img src='assets/images/icon-cmder.png' />"
+	},
+	{
+		"text": "Git GUI Here",
+		"icon": "<img src='assets/images/icon-git.png' />"
+	},
+	{
+		"text": "Git Bash Here",
+		"icon": "<img src='assets/images/icon-git.png' />"
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "New",
+		"sub": [
+			{
+				"text": "Folder",
+				"icon": "<img src='assets/images/empty-small-folder.png' />"
+			},
+			{
+				"text": "Shortcut",
+				"icon": "<img src='assets/images/icon-shortcut.png' />"
+			},
+			{
+				"type": ContextMenu.DIVIDER
+			},
+			{
+				"text": "WinRAR archive",
+				"icon": "<img src='assets/images/zip-file-icon.png' />"
+			},
+			{
+				"text": "Rich Text Document",
+				"icon": "<img src='assets/images/documents-icon.png' />"
+			},
+			{
+				"text": "Text Document",
+				"icon": "<img src='assets/images/text-file-icon.png' />"
+			},
+			{
+				"text": "WinRAR ZIP archive",
+				"icon": "<img src='assets/images/zip-file-icon.png' />"
+			},
+		]
+	},
+	{
+		"type": ContextMenu.DIVIDER
+	},
+	{
+		"text": "Display settings",
+		"icon": "<img src='assets/images/icon-display-setting.png' />"
+	},
+	{
+		"text": "Personalize",
+		"icon": "<img src='assets/images/icon-personalize.png' />"
+	}
+];
+
+window.addEventListener("load", function(){
+	menu = new ContextMenu(cmen);
+
+	document.getElementById('cmenu').addEventListener("contextmenu", function(e){
+		menu.display(e);
+	});
+});
+
