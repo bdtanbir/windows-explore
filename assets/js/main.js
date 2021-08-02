@@ -46,10 +46,25 @@ $(document).on('click', '.windows-close-btn', function() {
 $('body, html').on('click', function() {
 	$('.windows10-notification-panel').removeClass('active');
 })
-$('.taskbar-notification').on('click', function() {
+$(document).on('click', '.taskbar-notification', function() {
 	$('.windows10-notification-panel').toggleClass('active');
 	$(this).toggleClass('active');
 })
+
+
+// Volume Event
+$(document).on('click', '.volume-mute', function() {
+	$(".taskbar-speaker.volume-mute").removeClass('volume-mute').addClass('volume-full');
+	$(".taskbar-speaker i").removeClass('la-volume-mute').addClass('la-volume-up');
+});
+$(document).on('click', '.volume-full', function() {
+	$(".taskbar-speaker.volume-full").removeClass('volume-full').addClass('volume-slow');
+	$(".taskbar-speaker i").removeClass('la-volume-up').addClass('la-volume-down');
+});
+$(document).on('click', '.volume-slow', function() {
+	$(".taskbar-speaker.volume-slow").removeClass('volume-slow').addClass('volume-mute');
+	$(".taskbar-speaker i").removeClass('la-volume-down').addClass('la-volume-mute');
+});
 
 
 

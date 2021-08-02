@@ -812,7 +812,7 @@ input:focus {
     margin-bottom: 16px;
     color: #a6d8ff;
     display: inline-block;
-    cursor: pointer;
+    cursor: context-menu;
 }
 .windows10-notification-panel .windows10-notification-header h1 {
     margin: 18px 0 0 0;
@@ -821,6 +821,9 @@ input:focus {
 .windows10-notification-panel .windows10-notification h1 {
     color: #a7a7a7;
     font-size: 16px;
+}
+.windows10-notification-panel .windows10-notification-footer h1:hover {
+    color: #ffffff;
 }
 .windows10-notification-footer {
     padding: 0 20px 5px 16px;
