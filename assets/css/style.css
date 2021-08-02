@@ -917,7 +917,7 @@ input:focus {
     cursor: pointer;
 }
 .chrome-browser-area .chrome-browser-body {
-    height: 100%;
+    height: 464px;
     width: 100%;
     background: #ffffff;
     padding: 4px;
