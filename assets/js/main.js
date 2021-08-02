@@ -21,7 +21,6 @@ var taskbar = document.querySelector('.windows10-taskbar').offsetHeight
 var notificationbar = document.querySelector('.windows10-notification-panel')
 var notification_height = windowsdesktop - taskbar;
 notificationbar.style.height = notification_height+'px';
-console.log(taskbar);
 
 
 
@@ -43,9 +42,9 @@ $(document).on('click', '.windows-close-btn', function() {
 
 
 // Notification Panel
-// $('body, html').on('click', function() {
-// 	$('.windows10-notification-panel').removeClass('active');
-// })
+$(document).on('click','#cmenu', function() {
+	$('.windows10-notification-panel').removeClass('active');
+})
 $(document).on('click', '.taskbar-notification', function() {
 	$('.windows10-notification-panel').toggleClass('active');
 	$(this).toggleClass('active');
@@ -79,6 +78,16 @@ $(document).on('click', '.collapse-notification-footer-toggle.uncollapsed', func
 	$(".windows10-notification-footer").removeClass('active');
 	$(this).removeClass('uncollapsed')
 	notification_claps.innerHTML = 'Expand';
+});
+
+
+
+// Chrome browser
+var url_input = $("#url_input");
+var url_output = $("#url_output");
+$(document).on('click', '.submit-browser-url', function() {
+	var input_submit_url = url_input.val();
+	document.getElementById('url_output').src = input_submit_url
 });
 
 

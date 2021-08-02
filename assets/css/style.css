@@ -61,6 +61,11 @@ ul {
 .text-center {
     text-align: center;
 }
+iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 99999999;
+}
 
 
 
@@ -446,6 +451,7 @@ ul {
 .windows-header-search-form input::-moz-placeholder {
     color: #6d6d6d;
 }
+button:focus,
 .windows-header-search-form input:focus {
     outline: none;
     box-shadow: none;
@@ -684,6 +690,7 @@ input:focus {
     margin-right: 2px;
     position: relative;
 }
+.windows10-taskbar-right .taskbar-datetime:hover,
 .file-explore-active .windows10-taskbar-apps .taskbar-icon.active,
 .windows10-taskbar-right .taskbar-datetime:hover,
 .windows10-taskbar-right .taskbar-notification:hover,
@@ -877,6 +884,50 @@ input:focus {
 
 
 
+/* Chrome Browser */
+.chrome-browser-area {
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    border: 2px solid #f1f1f1;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+}
+.chrome-browser-area .chrome-browser-header {
+    background: #f1f1f1;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-left {
+    padding-left: 10px;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-left input {
+    border: none;
+    background: #ffffff;
+    width: 500px;
+    padding: 6px 20px;
+    border-radius: 3px;
+    border: 1px solid #eeeeee;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-left button {
+    border: none;
+    background: #0798ec;
+    color: #ffffff;
+    padding: 6px 5px;
+    border-radius: 4px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.chrome-browser-area .chrome-browser-body {
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    padding: 4px;
+}
+
+
+
+
+
+
 /* RIGHT CLICK MENU */
 #cmenu {
     position: fixed;
@@ -892,9 +943,11 @@ input:focus {
     transform-origin: top left;
     padding: 0;
     z-index: 999999999999;
+    visibility: hidden;
 }
 .cm_container.display{
     opacity: 1;
+    visibility: visible;
 }
 .cm_container, .cm_container *{
     box-sizing: border-box;
