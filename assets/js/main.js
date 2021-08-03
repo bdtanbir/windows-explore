@@ -109,6 +109,15 @@ $(document).on('click', '.chrome-browser-area .windows-close-btn', function() {
 });
 
 
+// Windows10 Start Bar
+$('body').on('click', function() {
+	$(".windows10-start-area").removeClass('active');
+});
+$(document).on('click', '.taskbar-window-icon', function() {
+	$(".windows10-start-area").addClass('active');
+});
+
+
 window.onload = function() {
     initDragElement();
     initResizeElement();
@@ -317,14 +326,13 @@ function chromeinitDragElement() {
 //  Current Date Time
 var datefield = document.querySelector(".tody-date")
 var timefield = document.querySelector(".tody-time")
-var startbar_month = document.querySelector(".date-month");
+var startbar_dayname = document.querySelector(".date-day-name");
 var startbar_day = document.querySelector(".date-day");
-const monthNames = [
-	"January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+const dayNames = [
+	"Saturday", "Sunday", "Monday", "Tuesday", "Wednersday", "Tursday", "Friday"
 ];
 var today = new Date();
-startbar_month.innerHTML = monthNames[today.getMonth()];
+startbar_dayname.innerHTML = dayNames[today.getDate()];
 startbar_day.innerHTML = today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var dd = String(today.getDate()).padStart(2, '');
