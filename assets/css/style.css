@@ -624,7 +624,7 @@ button:focus,
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgb(0 0 0 / 50%);
+    background: rgb(0 0 0 / 60%);
     backdrop-filter: blur(10px);
     z-index: 99999;
 }
