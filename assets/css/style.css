@@ -1130,6 +1130,7 @@ input:focus {
     flex: none;
     overflow-x: hidden;
     padding-right: 8px;
+    padding-bottom: 55px;
 }
 .windows10-start-content-middle ul {
     cursor: context-menu;
