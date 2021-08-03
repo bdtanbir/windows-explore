@@ -317,10 +317,18 @@ function chromeinitDragElement() {
 //  Current Date Time
 var datefield = document.querySelector(".tody-date")
 var timefield = document.querySelector(".tody-time")
+var startbar_month = document.querySelector(".date-month");
+var startbar_day = document.querySelector(".date-day");
+const monthNames = [
+	"January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 var today = new Date();
+startbar_month.innerHTML = monthNames[today.getMonth()];
+startbar_day.innerHTML = today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var dd = String(today.getDate()).padStart(2, '');
+var mm = String(today.getMonth() + 1).padStart(2, ''); //January is 0!
 var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
@@ -328,18 +336,14 @@ datefield.innerHTML = today;
 
 
 function getDateTime() {
-	var now     = new Date(); 
-	var day     = now.getDate();
+	var now     = new Date();
 	var hour    = now.getHours();
 	var minute  = now.getMinutes();
 	var ampm = hour >= 12 ? 'pm' : 'am';
 	hour = hour % 12;
 	hour = hour ? hour : 12; // the hour '0' should be '12'
-	if(day.toString().length == 1) {
-		 day = '0'+day;
-	}   
 	if(hour.toString().length == 1) {
-		 hour = '0'+hour;
+		 hour = ''+hour;
 	}
 	if(minute.toString().length == 1) {
 		 minute = '0'+minute;
@@ -351,7 +355,6 @@ function getDateTime() {
 setInterval(function(){
 	currentTime = getDateTime();
 	timefield.innerHTML = currentTime;
-	// document.getElementById("digital-clock").innerHTML = currentTime;
 }, 1000);
 
 

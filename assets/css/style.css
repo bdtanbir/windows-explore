@@ -1218,9 +1218,18 @@ input:focus {
 .windows10-start-content-right-create-tab .windows10-start-content-games-tab .your-phone-widget,
 .windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child,
 .windows10-start-content-right-create-tab .windows10-start-content-games-tab .xbox-game-widget,
-.windows10-start-content-right-create-tab  img.date-widget {
+.windows10-start-content-right-create-tab  .date-widget {
     width: 100px;
     margin-right: 4px;
+}
+.windows10-start-content-right-create-tab  .date-widget {
+    text-align: center;
+    background: #0078d7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
 }
 .windows10-start-content-right-create-tab .windows10-start-content-create-tab-item {
     width: 204px;
@@ -1239,6 +1248,7 @@ input:focus {
 .windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child img:first-child {
     margin-bottom: 4px;
 }
+.windows10-start-content-right-create-tab  .date-widget:hover,
 .windows10-start-content-right img:hover {
     box-shadow: 0 0 0 2px rgb(255 255 255 / 50%);
 }
