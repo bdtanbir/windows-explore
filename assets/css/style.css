@@ -980,6 +980,7 @@ input:focus {
     background: rgb(34 34 34 / 90%);
     backdrop-filter: blur(30px);
     padding-left: 48px;
+    padding-right: 4px;
 }
 .windows10-start-area .windows10-start-content-left {
     flex-direction: column;
@@ -1113,7 +1114,7 @@ input:focus {
     background: #a8a8a8;
 }
 .windows10-start-content-middle {
-    width: 258px;
+    width: 268px;
     flex: none;
     overflow-x: hidden;
     padding-right: 8px;
@@ -1161,6 +1162,86 @@ input:focus {
 }
 
 
+/* Windows10 Start bar Right */
+.windows10-start-content-right::-webkit-scrollbar {
+    width: 2px;
+}
+.windows10-start-content-right::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+.windows10-start-content-right::-webkit-scrollbar-thumb {
+    outline: none;
+    background: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.windows10-start-content-right:hover::-webkit-scrollbar-thumb {
+    background: #000;
+}
+.windows10-start-content-right {
+    padding-right: 12px;
+    padding-left: 7px;
+    overflow-x: hidden;
+}
+.windows10-start-content-right-create-tab h1 {
+    width: 100%;
+    height: 34px;
+    color: #ffffff;
+    position: relative;
+    font-size: 12px;
+    font-family: roboto;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+.windows10-start-content-right-create-tab h1 .create-tab-bars {
+    width: 16px;
+    height: 4px;
+    position: relative;
+}
+.windows10-start-content-right-create-tab h1 .create-tab-bars:before,
+.windows10-start-content-right-create-tab h1 .create-tab-bars:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+    top: 0;
+}
+.windows10-start-content-right-create-tab h1 .create-tab-bars:after {
+    top: auto;
+    bottom: 0;
+}
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .candy-friends-widget,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .your-phone-widget,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .xbox-game-widget,
+.windows10-start-content-right-create-tab  img.date-widget {
+    width: 100px;
+    margin-right: 4px;
+}
+.windows10-start-content-right-create-tab .windows10-start-content-create-tab-item {
+    width: 204px;
+}
+.windows10-start-content-right-create-tab h1,
+.windows10-start-content-right-create-tab .windows10-start-content-create-tab-item .windows10-start-content-create-tab-mail {
+    margin-top: 4px;
+}
+.windows10-start-content-right-create-tab .windows10-start-content-create-tab-item .windows10-start-content-create-tab-mail .office-widget,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child img:nth-child(odd) {
+    margin-right: 4px;
+}
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .your-phone-widget,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child,
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child img:nth-child(2),
+.windows10-start-content-right-create-tab .windows10-start-content-games-tab .windows10-start-content-games-tab-child img:first-child {
+    margin-bottom: 4px;
+}
+.windows10-start-content-right img:hover {
+    box-shadow: 0 0 0 2px rgb(255 255 255 / 50%);
+}
 
 
 
