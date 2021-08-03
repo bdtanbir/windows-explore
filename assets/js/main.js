@@ -84,7 +84,8 @@ $(document).on('click', '.collapse-notification-footer-toggle.uncollapsed', func
 
 // Chrome browser
 var url_input = $("#url_input");
-$(document).on('click', '.submit-browser-url', function() {
+$(document).on('click', '.submit-browser-url', function(e) {
+	e.preventDefault();
 	var input_submit_url = url_input.val();
 	document.getElementById('url_output').src = input_submit_url
 });
@@ -419,7 +420,7 @@ var cmen = [
 		]
 	},
 	{
-		"text": "Refresh",
+		"text": "<a href=''>Refresh</a>",
 	},
 	{
 		"type": ContextMenu.DIVIDER

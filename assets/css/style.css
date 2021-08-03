@@ -1322,6 +1322,10 @@ input:focus {
     font-weight: 400;
     letter-spacing: 0.3px;
 }
+.cm_container li a {
+    text-decoration: none;
+    color: #000000;
+}
 .cm_container li:hover{
     background-color: #ffffff;
 }
