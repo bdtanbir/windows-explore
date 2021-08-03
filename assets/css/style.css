@@ -977,7 +977,7 @@ input:focus {
     left: 0;
     bottom: 40px;
     overflow: hidden;
-    background: rgb(34 34 34 / 84%);
+    background: rgb(34 34 34 / 90%);
     backdrop-filter: blur(30px);
     padding-left: 48px;
 }
@@ -989,8 +989,111 @@ input:focus {
     height: 100%;
     z-index: 99;
     background: rgb(34 34 34 / 60%);
-    width: 48px;
+    width: 46px;
     backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -webkit-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -moz-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -ms-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -o-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+}
+.windows10-start-area .windows10-start-content-left:hover {
+    box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+    -webkit-box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+    -moz-box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-top,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom,
+.windows10-start-area .windows10-start-content-left:hover {
+    width: 256px;
+}
+.windows10-start-content-middle {
+    width: 258px;
+    flex: none;
+}
+.windows10-start-content-start-btn {
+    height: 46px;
+    cursor: context-menu;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    flex-direction: column;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars span {
+    width: 16px;
+    height: 1px;
+    background: #ffffff;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars span + span {
+    margin-top: 3px;
+}
+.windows10-start-content-start-btn > span {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.windows10-start-content-start-btn,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom {
+    color: #fff;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    width: 100%;
+    height: 46px;
+    cursor: context-menu;
+}
+.windows10-start-content-start-btn:hover,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:hover {
+    background: #5d5d5d;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li i {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:first-child i {
+    font-size: 12px;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:first-child i:after {
+    content: '';
+    background: #666666;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: -1;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+.windows10-start-content-start-btn > span,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li span {
+    opacity: 0;
+    transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -webkit-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -moz-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -ms-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -o-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+}
+.windows10-start-area .windows10-start-content-left:hover .windows10-start-content-start-btn > span,
+.windows10-start-area .windows10-start-content-left:hover .windows10-start-content-left-bottom ul li span {
+    opacity: 1;
+    transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -webkit-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -moz-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -ms-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -o-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
 }
 
 
