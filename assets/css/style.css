@@ -1008,10 +1008,6 @@ input:focus {
 .windows10-start-area .windows10-start-content-left:hover {
     width: 256px;
 }
-.windows10-start-content-middle {
-    width: 258px;
-    flex: none;
-}
 .windows10-start-content-start-btn {
     height: 46px;
     cursor: context-menu;
@@ -1094,6 +1090,74 @@ input:focus {
     -moz-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
     -ms-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
     -o-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+}
+
+
+/* Windows10 Start bar Middle */
+.windows10-start-content-middle::-webkit-scrollbar {
+    width: 2px;
+}
+.windows10-start-content-middle::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+.windows10-start-content-middle::-webkit-scrollbar-thumb {
+    outline: none;
+    background: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.windows10-start-content-middle:hover::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+}
+.windows10-start-content-middle {
+    width: 258px;
+    flex: none;
+    overflow-x: hidden;
+    padding-right: 8px;
+}
+.windows10-start-content-middle ul {
+    cursor: context-menu;
+}
+.windows10-start-content-middle ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: context-menu;
+    text-decoration: none;
+    width: 100%;
+}
+.windows10-start-content-middle ul li.item-divider {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 5px;
+    font-size: 14px;
+}
+.windows10-start-content-middle ul li:hover {
+    background: linear-gradient(to left, #5d5e5f, #383a3c);
+}
+.windows10-start-content-middle ul li + li{
+    margin-top: 4px;
+}
+.windows10-start-content-middle ul li a .app-image {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    flex: none;
+    background: #0078d7;
+    line-height: 41px;
+    margin-right: 8px;
+}
+.windows10-start-content-middle ul li a .app-image img {
+    width: 22px;
+}
+.windows10-start-content-middle ul li a .app-name {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    font-family: roboto;
 }
 
 
