@@ -91,7 +91,7 @@ $(document).on('click', '.submit-browser-url', function(e) {
 });
 $(document).on('click', '.go-to-home', function() {
 	url_input.val('https://')
-	document.getElementById('url_output').src = 'https://';
+	document.getElementById('url_output').src = 'https://www.google.com/webhp?igu=1';
 });
 
 $(document).on('click', '.taskbar-icon-chrome', function() {
@@ -228,6 +228,7 @@ function chromeinitDragElement() {
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
       pos4 = e.clientY;
+	  console.log(pos3 + ' ' + pos4);
       document.onmouseup = closeDragElement;
       // call a function whenever the cursor moves:
       document.onmousemove = elementDrag;
@@ -244,6 +245,7 @@ function chromeinitDragElement() {
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
+	  console.log(pos3 + ' ' + pos4);
       // set the element's new position:
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
